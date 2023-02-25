@@ -30,6 +30,8 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
+      - name: Upload test coverage
+        users: actions/upload-artifact@v3
   lint:
     name: Lint
     runs-on: ubuntu-latest

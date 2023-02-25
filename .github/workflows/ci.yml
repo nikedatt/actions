@@ -32,6 +32,9 @@ jobs:
         run: npm test
       - name: Upload test coverage
         users: actions/upload-artifact@v3
+        with:
+          name: test-coverage-${{ matrix.os }}-${{ matrix.node }}
+          path: coverage
   lint:
     name: Lint
     runs-on: ubuntu-latest

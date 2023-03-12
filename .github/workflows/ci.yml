@@ -18,6 +18,7 @@ jobs:
           node-version: 16.x
       - name: Get NPM cache directory
         id: npm-cache
+        shell: bash
         run: |
           echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
       - name: Cache NPM

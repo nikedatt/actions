@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: [push, workflow_dispatch]
+on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   unit-test:
@@ -19,7 +19,7 @@ jobs:
       - name: Get NPM cache directory
         id: npm-cache
         run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+          echo "echo "dir=$(npm config get cache) >> $GITHUB_OUTPUT""
       - name: Cache NPM
         uses: actions/cache@v3
         with:
